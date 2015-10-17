@@ -59,11 +59,10 @@ grid = [
     "20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16",
     "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54",
     "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"
-    ]
+]
 
 
 def load_table():
-
     table = []
 
     for line in grid:
@@ -74,6 +73,8 @@ def load_table():
         table.append(row)
 
     return table
+
+
 if __name__ == "__main__":
 
     table = load_table()
@@ -81,35 +82,35 @@ if __name__ == "__main__":
     solution = 0
 
     # horizontal
-    for i in xrange(0,20):
-        for j in xrange(0,17):
-            product_values = reduce(lambda x,y: x*y, table[i][j:(j+4)])
-            solution = max(solution,product_values)
+    for i in xrange(0, 20):
+        for j in xrange(0, 17):
+            product_values = reduce(lambda x, y: x * y, table[i][j:(j + 4)])
+            solution = max(solution, product_values)
 
     # vertical
     v_table = map(lambda *a: list(a), *table)
-    for i in xrange(0,20):
-        for j in xrange(0,17):
-            product_values = reduce(lambda x,y: x*y, v_table[i][j:(j+4)])
-            solution = max(solution,product_values)
+    for i in xrange(0, 20):
+        for j in xrange(0, 17):
+            product_values = reduce(lambda x, y: x * y, v_table[i][j:(j + 4)])
+            solution = max(solution, product_values)
 
     # diagonal \
-    for i in xrange(0,17):
-        for j in xrange(0,17):
+    for i in xrange(0, 17):
+        for j in xrange(0, 17):
             values = []
-            for k in xrange(0,4):
-                values.append(table[i+k][j+k])
-                product_values = reduce(lambda x,y: x*y, values)
-                solution = max(solution,product_values)
+            for k in xrange(0, 4):
+                values.append(table[i + k][j + k])
+                product_values = reduce(lambda x, y: x * y, values)
+                solution = max(solution, product_values)
 
     # diagonal /
-    for i in xrange(0,17):
-        for j in xrange(3,20):
+    for i in xrange(0, 17):
+        for j in xrange(3, 20):
             values = []
             print i, j
-            for k in xrange(0,4):
-                values.append(table[i+k][j-k])
-                product_values = reduce(lambda x,y: x*y, values)
-                solution = max(solution,product_values)
+            for k in xrange(0, 4):
+                values.append(table[i + k][j - k])
+                product_values = reduce(lambda x, y: x * y, values)
+                solution = max(solution, product_values)
 
     print solution

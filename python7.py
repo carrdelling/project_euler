@@ -2,13 +2,16 @@
 
 ################################################################################
 #
-# Project Euler - Primes
+# Project Euler - Problem 7
 #
-# Auxiliary functions to work with prime numbers
+# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see
+# that the 6th prime is 13.
 #
-# Joaquin Derrac - carrdelling@gmail.com
+# What is the 10 001st prime number?
 #
 ################################################################################
+
+from common.primes import get_ith_prime
 
 
 def get_ith_prime(ith):
@@ -38,32 +41,8 @@ def get_ith_prime(ith):
 
     return current - 2 if inc_4 else current - 4
 
+if __name__ == "__main__":
 
-def get_sieve(n):
-    sieve = [False, False] + [True] * (n - 1)
+    solution = get_ith_prime(10001)
 
-    for i in xrange(2, n):
-        if sieve[i]:
-            sieve[2 * i::i] = [False] * (n // i - 1)
-
-    return sieve
-
-
-def factorize(n, primes):
-    factors = []
-
-    for p in primes:
-
-        while n % p == 0:
-
-            n /= p
-            factors.append(p)
-
-    dic_factors = {}
-
-    for factor in factors:
-
-        dic_factors.setdefault(factor, 0)
-        dic_factors[factor] += 1
-
-    return dic_factors
+    print solution

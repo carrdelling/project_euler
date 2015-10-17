@@ -12,15 +12,16 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 #
+# Joaquin Derrac - carrdelling@gmail.com
+#
 ################################################################################
 
 if __name__ == "__main__":
 
-    for a in xrange(1,350):
-        for b in xrange(a,500):
-            for c in xrange(b,1000):
-                if c**2 == a**2 + b**2 and a+b+c == 1000:
+    for a in xrange(1, 350):
+        for b in xrange(a, 500):
+            for c in xrange(b, 1000):
+                if c ** 2 == a ** 2 + b ** 2 and a + b + c == 1000:
                     solution = a * b * c
 
     print solution
-

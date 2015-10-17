@@ -12,13 +12,12 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed
 # four million, find the sum of the even-valued terms.
 #
-#
 # Joaquin Derrac - carrdelling@gmail.com
 #
 ################################################################################
 
-def next_fib():
 
+def next_fib():
     first = 1
     second = 1
 

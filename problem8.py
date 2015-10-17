@@ -31,6 +31,8 @@
 # Find the thirteen adjacent digits in the 1000-digit number that have the
 # greatest product. What is the value of this product?
 #
+# Joaquin Derrac - carrdelling@gmail.com
+#
 ################################################################################
 
 number = "731671765313306249192251196744265747423553491949349698352031277450" \
@@ -50,22 +52,18 @@ number = "731671765313306249192251196744265747423553491949349698352031277450" \
          "022569831552000559357297257163626956188267042825248360082325753042" \
          "0752963450"
 
-
-
 if __name__ == "__main__":
 
     size_slice = 13
     solution = 0
 
-    for i in xrange(0, len(number)-size_slice+1):
-        slice_number = number[i:i+size_slice]
+    for i in xrange(0, len(number) - size_slice + 1):
+        slice_number = number[i:i + size_slice]
 
         if '0' in slice_number:
             continue
 
-        value = reduce(lambda x, y: int(x)*int(y),slice_number)
-        solution = max(value,solution)
+        value = reduce(lambda x, y: int(x) * int(y), slice_number)
+        solution = max(value, solution)
 
     print solution
-
-

@@ -17,8 +17,8 @@ if __name__ == "__main__":
 
     solution = None
 
-    for first in xrange(100,1000):
-        for second in xrange(first,1000):
+    for first in xrange(100, 1000):
+        for second in xrange(first, 1000):
             candidate = first * second
 
             if str(candidate) == str(candidate)[::-1] and candidate > solution:

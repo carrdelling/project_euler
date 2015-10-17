@@ -23,10 +23,10 @@
 
 if __name__ == "__main__":
 
-    sum_one_hundred = sum([x for x in range(1,101)])
+    sum_one_hundred = sum([x for x in range(1, 101)])
     sum_one_hundred_squared = sum_one_hundred * sum_one_hundred
 
-    sum_squared = sum([x**2 for x in range(1,101)])
+    sum_squared = sum([x ** 2 for x in range(1, 101)])
 
     solution = sum_one_hundred_squared - sum_squared
 

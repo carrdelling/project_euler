@@ -50,10 +50,10 @@ def count_divisors(n):
 
 def triangular_generator():
     current = 1
-    sum = 0
+    acumulator = 0
     while True:
-        sum += current
-        yield sum
+        acumulator += current
+        yield acumulator
         current += 1
 
 

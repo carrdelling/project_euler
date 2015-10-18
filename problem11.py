@@ -63,16 +63,16 @@ grid = [
 
 
 def load_table():
-    table = []
+    data = []
 
     for line in grid:
         numbers = line.split()
         row = []
         for n in numbers:
             row.append(int(n))
-        table.append(row)
+        data.append(row)
 
-    return table
+    return data
 
 
 if __name__ == "__main__":

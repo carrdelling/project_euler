@@ -50,4 +50,4 @@ if __name__ == "__main__":
     result = sum([(pos + 1) * name_score(name) for pos, name in
                   enumerate(sorted(names))])
 
-    print result
+    print(result)

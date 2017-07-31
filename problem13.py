@@ -217,7 +217,7 @@ if __name__ == "__main__":
 
     acumulator = 0
     grand_sum = []
-    for i in xrange(-1, -51, -1):
+    for i in range(-1, -51, -1):
 
         for line in raw_data:
             acumulator += int(line[i])
@@ -236,4 +236,4 @@ if __name__ == "__main__":
     grand_sum = grand_sum[::-1]
     solution = ''.join(grand_sum)[:10]
 
-    print solution
+    print(solution)

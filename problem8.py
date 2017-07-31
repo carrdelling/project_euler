@@ -57,13 +57,16 @@ if __name__ == "__main__":
     size_slice = 13
     solution = 0
 
-    for i in xrange(0, len(number) - size_slice + 1):
+    for i in range(0, len(number) - size_slice + 1):
         slice_number = number[i:i + size_slice]
 
         if '0' in slice_number:
             continue
 
-        value = reduce(lambda x, y: int(x) * int(y), slice_number)
+        value = 1
+        for v in slice_number:
+            value *= int(v)
+
         solution = max(value, solution)
 
-    print solution
+    print(solution)

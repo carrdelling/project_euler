@@ -17,4 +17,4 @@ if __name__ == "__main__":
 
     solution = sum([int(c) for c in str(2 ** 1000)])
 
-    print solution
+    print(solution)

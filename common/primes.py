@@ -18,9 +18,7 @@ def get_ith_prime(ith):
     if ith == 2:
         return 3
 
-    primes = set()
-    primes.add(2)
-    primes.add(3)
+    primes = {2, 3}
 
     current = 5
     inc_4 = False
@@ -42,7 +40,7 @@ def get_ith_prime(ith):
 def get_sieve(n):
     sieve = [False, False] + [True] * (n - 1)
 
-    for i in xrange(2, n):
+    for i in range(2, n):
         if sieve[i]:
             sieve[2 * i::i] = [False] * (n // i - 1)
 

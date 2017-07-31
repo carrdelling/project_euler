@@ -22,17 +22,17 @@ if __name__ == "__main__":
 
     sieve = get_sieve(end)
 
-    primes = [x for x in xrange(2, end + 1) if sieve[x]]
+    primes = [x for x in range(2, end + 1) if sieve[x]]
 
     factors_group = {}
 
-    for i in xrange(2, end + 1):
+    for i in range(2, end + 1):
         factors = factorize(i, primes)
 
         for factor in factors:
 
-            if factor not in factors_group \
-                    or factors_group[factor] < factors[factor]:
+            not_factor = factor not in factors_group
+            if not_factor or factors_group[factor] < factors[factor]:
                 factors_group[factor] = factors[factor]
 
     solution = 1
@@ -40,4 +40,4 @@ if __name__ == "__main__":
     for factor in factors_group:
         solution *= factor ** factors_group[factor]
 
-    print solution
+    print(solution)

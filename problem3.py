@@ -22,4 +22,4 @@ if __name__ == "__main__":
             number /= current
         current += 1
 
-    print number
+    print(number)

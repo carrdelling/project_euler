@@ -20,4 +20,4 @@ from math import factorial
 if __name__ == "__main__":
 
     solution = sum([int(x) for x in str(factorial(100))])
-    print solution
+    print(solution)

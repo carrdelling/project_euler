@@ -21,8 +21,8 @@ if __name__ == "__main__":
 
     sieve = get_sieve(limit)
 
-    for i in xrange(0, limit):
+    for i in range(0, limit):
         if sieve[i]:
             solution += i
 
-    print solution
+    print(solution)

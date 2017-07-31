@@ -41,4 +41,4 @@ if __name__ == "__main__":
 
         solution += value if value % 2 == 0 else 0
 
-    print solution
+    print(solution)

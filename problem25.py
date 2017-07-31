@@ -53,7 +53,7 @@ if __name__ == "__main__":
     index = 1
     while True:
 
-        number = fib_gen.next()
+        number = next(fib_gen)
         length =  len(str(number))
 
         if length >= 1000:
@@ -61,7 +61,4 @@ if __name__ == "__main__":
             break
         index += 1
 
-    print index
-
-
-
+    print(index)

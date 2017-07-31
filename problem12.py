@@ -39,7 +39,7 @@ def count_divisors(n):
     divisors = 0
     sqrt_n = int(sqrt(n))
 
-    for i in xrange(1, sqrt_n + 1):
+    for i in range(1, sqrt_n + 1):
         if not n % i:
             divisors += 2
 
@@ -59,6 +59,7 @@ def triangular_generator():
 
 if __name__ == "__main__":
 
+    solution = -1
     numbers = triangular_generator()
 
     for solution in numbers:
@@ -67,4 +68,4 @@ if __name__ == "__main__":
         if div > 500:
             break
 
-    print solution
+    print(solution)

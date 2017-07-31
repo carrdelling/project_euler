@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     cache = {1: 1}
 
-    for i in xrange(1, 1000000):
+    for i in range(1, 1000000):
 
         steps = 0
         n = i
@@ -55,4 +55,4 @@ if __name__ == "__main__":
             length = value
             solution = key
 
-    print solution
+    print(solution)

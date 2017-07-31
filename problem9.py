@@ -18,10 +18,12 @@
 
 if __name__ == "__main__":
 
-    for a in xrange(1, 350):
-        for b in xrange(a, 500):
-            for c in xrange(b, 1000):
+    solution = -1
+
+    for a in range(1, 350):
+        for b in range(a, 500):
+            for c in range(b, 1000):
                 if c ** 2 == a ** 2 + b ** 2 and a + b + c == 1000:
                     solution = a * b * c
 
-    print solution
+    print(solution)

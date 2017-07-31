@@ -75,15 +75,15 @@ if __name__ == "__main__":
     current = [int(x) for x in triangle[-1]]
 
     # traverse the triangle upwards
-    for level in xrange(len(triangle)-2, -1, -1):
+    for level in range(len(triangle)-2, -1, -1):
 
         paths = [int(x) for x in triangle[level]]
         new_current = []
-        for p in xrange(0, len(paths)):
+        for p in range(len(paths)):
 
             new_cost = paths[p] + max(current[p], current[p + 1])
             new_current.append(new_cost)
 
         current = list(new_current)
 
-    print current[0]
+    print(current[0])

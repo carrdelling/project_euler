@@ -51,11 +51,11 @@ def number_str_lenght(number):
 if __name__ == "__main__":
 
     solution = 0
-    for i in xrange(1, 1000):
+    for i in range(1, 1000):
         length = number_str_lenght(i)
         solution += length
 
     # the last one - 1000
     solution += 11
 
-    print solution
+    print(solution)

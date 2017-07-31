@@ -48,7 +48,7 @@ def days_to_next_day_one():
 
     while True:
 
-        for i in xrange(0, 12):
+        for _ in range(12):
             days = days_in_a_month(month, year)
             yield days
 
@@ -62,11 +62,11 @@ if __name__ == "__main__":
     week_day = 1
     solution = 0
 
-    for y in xrange(1900, 2001):
-        for i in xrange(0, 12):
-            week_day = (week_day + calendar.next()) % 7
+    for y in range(1900, 2001):
+        for i in range(12):
+            week_day = (week_day + next(calendar)) % 7
 
             if week_day == 0 and y > 1900:
                 solution += 1
 
-    print solution
+    print(solution)

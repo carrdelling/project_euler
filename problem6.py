@@ -30,4 +30,4 @@ if __name__ == "__main__":
 
     solution = sum_one_hundred_squared - sum_squared
 
-    print solution
+    print(solution)

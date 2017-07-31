@@ -19,4 +19,4 @@ if __name__ == "__main__":
 
     solution = get_ith_prime(10001)
 
-    print solution
+    print(solution)

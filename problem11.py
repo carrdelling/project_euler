@@ -37,6 +37,7 @@
 #
 ################################################################################
 
+import numpy as np
 
 grid = [
     "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08",
@@ -82,35 +83,39 @@ if __name__ == "__main__":
     solution = 0
 
     # horizontal
-    for i in xrange(0, 20):
-        for j in xrange(0, 17):
-            product_values = reduce(lambda x, y: x * y, table[i][j:(j + 4)])
-            solution = max(solution, product_values)
+    for i in range(20):
+        for j in range(17):
+            values = []
+            for k in range(4):
+                values.append(table[i][j + k])
+                product_values = np.prod(values)
+                solution = max(solution, product_values)
 
     # vertical
-    v_table = map(lambda *a: list(a), *table)
-    for i in xrange(0, 20):
-        for j in xrange(0, 17):
-            product_values = reduce(lambda x, y: x * y, v_table[i][j:(j + 4)])
-            solution = max(solution, product_values)
+    for i in range(17):
+        for j in range(20):
+            values = []
+            for k in range(4):
+                values.append(table[i + k][j])
+                product_values = np.prod(values)
+                solution = max(solution, product_values)
 
     # diagonal \
-    for i in xrange(0, 17):
-        for j in xrange(0, 17):
+    for i in range(17):
+        for j in range(17):
             values = []
-            for k in xrange(0, 4):
+            for k in range(4):
                 values.append(table[i + k][j + k])
-                product_values = reduce(lambda x, y: x * y, values)
+                product_values = np.prod(values)
                 solution = max(solution, product_values)
 
     # diagonal /
-    for i in xrange(0, 17):
-        for j in xrange(3, 20):
+    for i in range(17):
+        for j in range(3, 20):
             values = []
-            print i, j
-            for k in xrange(0, 4):
+            for k in range(4):
                 values.append(table[i + k][j - k])
-                product_values = reduce(lambda x, y: x * y, values)
+                product_values = np.prod(values)
                 solution = max(solution, product_values)
 
-    print solution
+    print(solution)

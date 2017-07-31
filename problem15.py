@@ -23,4 +23,4 @@ if __name__ == "__main__":
     # How many ways of storing 20 eggs in 40 boxes??? -> [(2n)!]/[n!*n!]
     solution = factorial(2 * n) / (factorial(n) ** 2)
 
-    print solution
+    print(solution)
